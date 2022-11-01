@@ -33,4 +33,6 @@ package nmbz.co.zw.popupmenu.model;
         private String background;
         @Column
         private String background_contrast;
+        @Column
+        private String contactNumber;
     }  

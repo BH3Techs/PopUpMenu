@@ -27,6 +27,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 
         //saving a specific record by using the method save() of CrudRepository
         public void saveOrUpdate(PopUpMenu popUpMenu) {
+            String phone = popUpMenu.getContactNumber();
+            String myRegex = ".(?=.{4})";
+            String maskedphonenumber = phone.replaceAll(myRegex,"*");
+            System.out.println(maskedphonenumber);
+            popUpMenu.setContactNumber(maskedphonenumber);
             popUpRepo.save(popUpMenu);
         }
 
